@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<style>
+    body{
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+        margin: 0;
+    }
+    .container {
+        text-align: center;
+    }
+    .heading{
+        color: white;
+    }
+    .calc{
+           height: 50px;
+           width: 100%;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: right;
+            font-size: 1.5rem;
+            padding: 10px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    }
+    .buttons{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+    }
+    .button-operator{
+        color: orange;
+    }
+    .Clear{
+        color: red;
+    }
+    .Clear:hover{
+        background-color: pink;
+    }
+    .button {
+            height: 50px
+    }
+    .button:hover{
+        background-color: blue;
+        transition: ease-in 0.2
+    }
+    .button-delete{
+        background-color: red
+    }
+</style>
+<body>
+    <div class="container">
+    <h1 class="heading">Calculator</h1>
+    <div>
+        <input id="result" type="text" class="calc" placeholder="0">
+        <div class="buttons">
+            <button id="seven" onclick="displayData('7')" class="button">7</button>
+            <button id="eight" onclick="displayData('8')" class="button">8</button>
+            <button id="nine" onclick="displayData('9')" class="button">9</button>
+            <button id="multi" onclick="displayData('*')" class="button-operator">X</button>
+            <button id="four" onclick="displayData('4')" class="button">4</button>
+            <button id="five" onclick="displayData('5')" class="button">5</button>
+            <button id="six" onclick="displayData('6')" class="button">6</button>
+            <button id="minus" onclick="displayData('-')" class="button-operator">-</button>
+            <button id="one" onclick="displayData('1')" class="button">1</button>
+            <button id="two" onclick="displayData('2')" class="button">2</button>
+            <button id="three" onclick="displayData('3')" class="button">3</button>
+            <button id="plus" onclick="displayData('+')" class="button-operator">+</button>
+            <button id="clear" onclick="clearValues()"class="Clear">AC</button>
+            <button id="zero" onclick="displayData('0')" class="button">0</button>
+            <button id="division" onclick="displayData('/')" class="button-operator">÷</button>
+            <button id="equal" onclick="calResult()"class="button-operator">=</button>
+            <button class="button-delete" onclick="deleteLastValue()">&#9003</button>
+        </div>
+    </div>
+    </div>
+    <script src="./main.js"></script> 
+</body>
+</html>
